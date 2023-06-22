@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src={{heroDetail?.imageBase64}}></ion-img>
+  <ion-card no-margin>
+    <ion-card-header>
+    <ion-card-title>
+      {{heroDetail?.name}}
+    </ion-card-title>
+  </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-list lines="none">
+
+      <ion-item>
+        <ion-label>Age</ion-label>
+        <ion-chip color="primary">{{heroDetail?.age}}</ion-chip>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Height</ion-label>
+        <ion-chip color="secondary">{{heroDetail?.height}}</ion-chip>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Birthday</ion-label>
+        <ion-chip>{{heroDetail?.birthday}}</ion-chip>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModal(heroDetail?.isAlive)">
+      <ion-icon name="eye"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

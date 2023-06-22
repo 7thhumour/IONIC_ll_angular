@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Hero Status</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="center" horizontal="center">
+    <ion-fab-button *ngIf="value"> 
+      <ion-icon name="happy-outline" *ngIf="value"> </ion-icon>
+      Alive
+    </ion-fab-button>
+    <ion-fab-button *ngIf="!value"> 
+      <ion-icon name="sad-outline" *ngIf="!value"></ion-icon>
+      Dead
+    </ion-fab-button>
+  </ion-fab>
+
+ <ion-button (click)="closeModal()" class="container" color="danger">
+  <ion-icon name="close-circle-outline" size="large"></ion-icon>
+ </ion-button>
+</ion-content>
